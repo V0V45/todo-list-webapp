@@ -1,0 +1,14 @@
+.doneMarkerButton {
+    border: none;
+    background: transparent;
+    border-radius: 100%;
+    box-shadow: none;
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+.doneMarkerButton:hover {
+    box-shadow: 0 0 6px 0 #039100;
+}
+
+.doneMarkerImage {
+}

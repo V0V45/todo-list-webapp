@@ -1,0 +1,8 @@
+.main {
+    margin: 20px 32px 0px 32px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

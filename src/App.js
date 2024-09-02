@@ -1,13 +1,12 @@
 import './App.module.css';
+import Header from './components/header';
+import Main from './components/main';
+
 
 function App() {
   return (<>
-    <header>
-      <img src='./images/logo.svg' alt='To-Do List' />
-    </header>
-    <main>
-
-    </main>
+    <Header />
+    <Main />
   </>
   );
 }
