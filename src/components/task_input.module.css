@@ -8,9 +8,12 @@
     margin-left: 24px;
     margin-right: 24px;
     width: 100%;
+    border-radius: 16px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .taskInput:focus {
     outline: none;
-    border-bottom: 1px solid #0D0060;
+    box-shadow: 0 0 16px 0 #FF6B00;
 }

@@ -1,9 +1,9 @@
-.taskContainer {
+.addField {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
-    border-bottom: 2px solid #0D0060;
+    margin-top: 16px;
 }

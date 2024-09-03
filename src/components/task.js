@@ -4,14 +4,14 @@ import TaskInput from "./task_input";
 import ExpandButton from "./expand_button";
 import DeleteButton from "./delete_button";
 
-function Task({isDone, title}) {
-    // TODO: реализовать логику, добавить горизонтальную линию
+function Task({isDone, title, isExpanded}) {
+    // TODO: реализовать логику
     return (
         <>
         <div className={styles.taskContainer}>
             <DoneMarkerButton isDone={isDone} />
             <TaskInput title={title} />
-            <ExpandButton isExpanded={false} />
+            <ExpandButton isExpanded={isExpanded} />
             <DeleteButton />
         </div>
         </>
