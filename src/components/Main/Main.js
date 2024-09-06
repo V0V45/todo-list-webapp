@@ -1,11 +1,11 @@
-import styles from "./main.module.css";
-import TaskList from "./tasklist";
-import AddField from "./add_field";
+import classes from "./Main.module.css";
+import TaskList from "../TaskList";
+import AddField from "../AddField/AddField";
 
 function Main() {
 
     return (
-        <main className={styles.main}>
+        <main className={classes.main}>
             {/* TODO: добавить логику добавления, удаления и раскрытия тасков */}
             <TaskList />
             <AddField />

@@ -1,7 +1,7 @@
-import styles from "./expand_button.module.css";
-import expandClosed from "./images/expand-closed.svg";
-import expandOpened from "./images/expand-opened.svg";
-import expandHover from "./images/expand-hover.svg";
+import classes from "./ExpandButton.module.css";
+import expandClosed from "../../images/expand-closed.svg";
+import expandOpened from "../../images/expand-opened.svg";
+import expandHover from "../../images/expand-hover.svg";
 
 function ExpandButton({isExpanded}) {
     function handleMouseOver(event) {
@@ -13,7 +13,7 @@ function ExpandButton({isExpanded}) {
     }
 
     return (
-        <button className={styles.expandButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <button className={classes.expandButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
             <img src={isExpanded ? expandOpened : expandClosed} alt={isExpanded ? "expanded" : "hidden"} />
         </button>
     );

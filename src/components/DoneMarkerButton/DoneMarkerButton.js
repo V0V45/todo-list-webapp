@@ -1,7 +1,7 @@
-import styles from "./done_marker_button.module.css";
-import done from "./images/done.svg";
-import undone from "./images/undone.svg";
-import undoneHover from "./images/undone-hover.svg";
+import classes from "./DoneMarkerButton.module.css";
+import done from "../../images/done.svg";
+import undone from "../../images/undone.svg";
+import undoneHover from "../../images/undone-hover.svg";
 
 
 function DoneMarkerButton({isDone}) {
@@ -15,7 +15,7 @@ function DoneMarkerButton({isDone}) {
     }
 
     return (
-        <button className={styles.doneMarkerButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+        <button className={classes.doneMarkerButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
             <img src={isDone ? done : undone} alt={isDone ? "Done" : "Not done"} />
         </button>
     );

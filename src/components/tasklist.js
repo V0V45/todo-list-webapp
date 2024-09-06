@@ -1,13 +1,14 @@
-import Task from "./task";
+import Task from "./Task/Task";
 import { useState } from "react";
-import { initTasks } from "./business_logic/init_tasks";
+import { initTasks } from "../data/InitTasks";
+import { nanoid } from "nanoid";
 
 function TaskList() {
     const [taskList, setTaskList] = useState(initTasks);
 
     let currentTaskList = taskList.map((task) => {
         return (
-            <Task isDone={task.isDone} title={task.title} isExpanded={task.isExpanded} />
+            <Task key={nanoid()} isDone={task.isDone} title={task.title} isExpanded={task.isExpanded} />
         );
     });
     return currentTaskList;

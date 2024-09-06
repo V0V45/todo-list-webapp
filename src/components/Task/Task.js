@@ -1,14 +1,14 @@
-import styles from "./task.module.css";
-import DoneMarkerButton from "./done_marker_button";
-import TaskInput from "./task_input";
-import ExpandButton from "./expand_button";
-import DeleteButton from "./delete_button";
+import classes from "./Task.module.css";
+import DoneMarkerButton from "../DoneMarkerButton/DoneMarkerButton";
+import TaskInput from "../TaskInput/TaskInput";
+import ExpandButton from "../ExpandButton/ExpandButton";
+import DeleteButton from "../DeleteButton/DeleteButton";
 
 function Task({isDone, title, isExpanded}) {
     // TODO: реализовать логику
     return (
         <>
-        <div className={styles.taskContainer}>
+        <div className={classes.taskContainer}>
             <DoneMarkerButton isDone={isDone} />
             <TaskInput title={title} />
             <ExpandButton isExpanded={isExpanded} />
