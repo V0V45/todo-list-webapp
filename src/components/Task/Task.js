@@ -4,15 +4,15 @@ import TaskInput from "../TaskInput/TaskInput";
 import ExpandButton from "../ExpandButton/ExpandButton";
 import DeleteButton from "../DeleteButton/DeleteButton";
 
-function Task({isDone, title, isExpanded}) {
+function Task({id, isDone, title, isExpanded, onTaskDone, onTaskDelete}) {
     // TODO: реализовать логику
     return (
         <>
         <div className={classes.taskContainer}>
-            <DoneMarkerButton isDone={isDone} />
+            <DoneMarkerButton isDone={isDone} onClick={() => onTaskDone(id)} />
             <TaskInput title={title} />
             <ExpandButton isExpanded={isExpanded} />
-            <DeleteButton />
+            <DeleteButton onClick={() => onTaskDelete(id)} />
         </div>
         </>
     );

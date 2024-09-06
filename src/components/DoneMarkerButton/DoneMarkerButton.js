@@ -4,8 +4,7 @@ import undone from "../../images/undone.svg";
 import undoneHover from "../../images/undone-hover.svg";
 
 
-function DoneMarkerButton({isDone}) {
-    // TODO: добавить онклик событие
+function DoneMarkerButton({isDone, onClick}) {
     function handleMouseOver(event) {
         event.target.src = undoneHover;
     }
@@ -15,7 +14,7 @@ function DoneMarkerButton({isDone}) {
     }
 
     return (
-        <button className={classes.doneMarkerButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+        <button className={classes.doneMarkerButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={onClick} >
             <img src={isDone ? done : undone} alt={isDone ? "Done" : "Not done"} />
         </button>
     );
