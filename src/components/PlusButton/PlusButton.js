@@ -2,7 +2,7 @@ import classes from "./PlusButton.module.css";
 import plusIcon from "../../images/plus.svg";
 import plusHover from "../../images/plus-hover.svg";
 
-function PlusButton() {
+function PlusButton({onClick}) {
     function handleMouseOver(event) {
         event.target.src = plusHover;
     }
@@ -12,7 +12,7 @@ function PlusButton() {
     }
 
     return (
-        <button className={classes.plusButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+        <button className={classes.plusButton} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={onClick} >
             <img src={plusIcon} alt="Add" />
         </button>
     );

@@ -2,6 +2,7 @@ import Task from "./Task/Task";
 import { useState } from "react";
 import { initTasks } from "../data/InitTasks";
 import { nanoid } from "nanoid";
+import AddField from "./AddField/AddField";
 
 function TaskList() {
     const [taskList, setTaskList] = useState(initTasks);
@@ -23,20 +24,28 @@ function TaskList() {
         for (let index = taskToDeleteId - 1; index < updatedTaskList.length; index++) {
             updatedTaskList[index].id -= 1;
         }
-        console.log(updatedTaskList);
         setTaskList(updatedTaskList);
     }
 
     function handleTaskChange(updatedTaskId, updatedTaskTitle) {
-        console.log("HandleTaskChange");
         let updatedTaskList = taskList.map((task) => {
             if (updatedTaskId === task.id) {
-                return {...task, title: updatedTaskTitle};
+                return { ...task, title: updatedTaskTitle };
             } else {
                 return task;
             }
         });
-        console.log(updatedTaskList);
+        setTaskList(updatedTaskList);
+    }
+
+    function handleTaskAdd() {
+        let updatedTaskList = taskList.slice();
+        updatedTaskList.push({
+            id: updatedTaskList.length + 1,
+            isDone: false,
+            title: `Task ` + (updatedTaskList.length + 1),
+            isExpanded: false,
+        });
         setTaskList(updatedTaskList);
     }
 
@@ -54,7 +63,12 @@ function TaskList() {
             />
         );
     });
-    return currentTaskList;
+    return (
+        <>
+            {currentTaskList}
+            <AddField onClick={handleTaskAdd} />
+        </>
+    );
 }
 
 export default TaskList;

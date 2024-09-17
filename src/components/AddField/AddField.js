@@ -1,10 +1,10 @@
 import classes from "./AddField.module.css";
 import PlusButton from "../PlusButton/PlusButton";
 
-function AddField() {
+function AddField({onClick}) {
     return (
     <div className={classes.addField}>
-        <PlusButton />
+        <PlusButton onClick={() => onClick()} />
     </div>
     );
 }
