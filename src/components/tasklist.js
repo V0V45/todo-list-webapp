@@ -66,6 +66,18 @@ function TaskList() {
         setTaskList(updatedTaskList);
     }
 
+    function handleDescriptionChange(updatedTaskId, updatedDescriptionValue) {
+        let updatedTaskList = taskList.map((task) => {
+            if (updatedTaskId === task.id) {
+                return {...task, description: updatedDescriptionValue};
+            } else {
+                return task;
+            }
+        });
+        console.log(updatedTaskList);
+        setTaskList(updatedTaskList);
+    }
+
     let currentTaskList = taskList.map((task) => {
         return (
             <Task
@@ -77,8 +89,9 @@ function TaskList() {
                 description={task.description}
                 onTaskDone={handleTaskDone}
                 onTaskDelete={handleTaskDelete}
-                onBlur={handleTaskChange}
+                onTaskBlur={handleTaskChange}
                 onTaskExpand={handleTaskExpand}
+                onDescriptionBlur={handleDescriptionChange}
             />
         );
     });
