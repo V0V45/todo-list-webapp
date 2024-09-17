@@ -16,3 +16,13 @@
     outline: none;
     box-shadow: 0 0 16px 0 #FF6B00;
 }
+
+.undone {
+    text-decoration: none;
+    color: #0D0060;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #039100;
+}

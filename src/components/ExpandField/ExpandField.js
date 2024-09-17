@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./ExpandField.module.css";
 
-function ExpandField({isShown, description, onDescriptionBlur}) {
+function ExpandField({isShown, isDone, description, onDescriptionBlur}) {
     const [descriptionValue, setDescriptionValue] = useState(description);
 
     function handleChange(event) {
@@ -10,7 +10,7 @@ function ExpandField({isShown, description, onDescriptionBlur}) {
 
     const hidden = <></>;
     const shown = <textarea
-        className={classes.descriptionTextArea}
+        className={isDone ? `${classes.descriptionTextArea} ${classes.done}` : `${classes.descriptionTextArea} ${classes.undone}`}
         onChange={handleChange}
         onBlur={(event) => onDescriptionBlur(event.target.value)}
         value={descriptionValue}

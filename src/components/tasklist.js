@@ -5,8 +5,7 @@ import { nanoid } from "nanoid";
 import AddField from "./AddField/AddField";
 
 function TaskList() {
-    // TODO: LOCAL STORAGE
-    const [taskList, setTaskList] = useState(initTasks);
+    const [taskList, setTaskList] = useState(JSON.parse(localStorage.getItem("taskList")) || initTasks);
 
     function handleTaskDone(updatedTaskId) {
         let updatedTaskList = taskList.map((task) => {
@@ -17,6 +16,7 @@ function TaskList() {
             }
         });
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     function handleTaskDelete(taskToDeleteId) {
@@ -26,6 +26,7 @@ function TaskList() {
             updatedTaskList[index].id -= 1;
         }
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     function handleTaskChange(updatedTaskId, updatedTaskTitle) {
@@ -37,6 +38,7 @@ function TaskList() {
             }
         });
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     function handleTaskAdd() {
@@ -49,6 +51,7 @@ function TaskList() {
             description: `Task ${updatedTaskList.length + 1} description`,
         });
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     function handleTaskExpand(taskToExpandId) {
@@ -64,6 +67,7 @@ function TaskList() {
             }
         });
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     function handleDescriptionChange(updatedTaskId, updatedDescriptionValue) {
@@ -74,8 +78,8 @@ function TaskList() {
                 return task;
             }
         });
-        console.log(updatedTaskList);
         setTaskList(updatedTaskList);
+        localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
     let currentTaskList = taskList.map((task) => {

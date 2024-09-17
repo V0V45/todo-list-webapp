@@ -14,7 +14,12 @@ function Task({id, isDone, title, isExpanded, description, onTaskDone, onTaskDel
                 <ExpandButton isExpanded={isExpanded} onClick={() => onTaskExpand(id)} />
                 <DeleteButton onClick={() => onTaskDelete(id)} />
             </div>
-            <ExpandField isShown={isExpanded} description={description} onDescriptionBlur={(value) => onDescriptionBlur(id, value)} />
+            <ExpandField 
+                isShown={isExpanded}
+                description={description}
+                onDescriptionBlur={(value) => onDescriptionBlur(id, value)}
+                isDone={isDone}
+            />
         </div>
     );
 }
