@@ -1,9 +1,12 @@
 .taskContainer {
+    width: 100%;
+    border-bottom: 2px solid #0D0060;
+}
+
+.task {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    border-bottom: 2px solid #0D0060;
 }

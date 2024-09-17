@@ -1,0 +1,18 @@
+.descriptionTextArea {
+    font-family: "Asterik Sans Variable";
+    font-style: italic;
+    font-size: 24px;
+    color: #0D0060;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.descriptionTextArea:focus {
+    outline: none;
+    box-shadow: 0 0 16px 0 #FF6B00;
+}

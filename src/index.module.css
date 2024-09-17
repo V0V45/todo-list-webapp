@@ -9,6 +9,17 @@
   src: url(./fonts/marckscript-regular.ttf);
 }
 
+@font-face {
+  font-family: "Asterik Sans Variable";
+  src: url(./fonts/asterisk-sans-variable-regular.ttf);
+}
+
+@font-face {
+  font-family: "Asterik Sans Variable";
+  font-style: italic;
+  src: url(./fonts/asterisk-sans-variable-italic.ttf);
+}
+
 body {
   background-color: #D7D7D7;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

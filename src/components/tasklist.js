@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import AddField from "./AddField/AddField";
 
 function TaskList() {
+    // TODO: LOCAL STORAGE
     const [taskList, setTaskList] = useState(initTasks);
 
     function handleTaskDone(updatedTaskId) {
@@ -43,8 +44,9 @@ function TaskList() {
         updatedTaskList.push({
             id: updatedTaskList.length + 1,
             isDone: false,
-            title: `Task ` + (updatedTaskList.length + 1),
+            title: `Task ${updatedTaskList.length + 1}`,
             isExpanded: false,
+            description: `Task ${updatedTaskList.length + 1} description`,
         });
         setTaskList(updatedTaskList);
     }
@@ -72,6 +74,7 @@ function TaskList() {
                 isDone={task.isDone}
                 title={task.title}
                 isExpanded={task.isExpanded}
+                description={task.description}
                 onTaskDone={handleTaskDone}
                 onTaskDelete={handleTaskDelete}
                 onBlur={handleTaskChange}
