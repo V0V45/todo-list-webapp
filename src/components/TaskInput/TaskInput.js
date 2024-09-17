@@ -1,7 +1,7 @@
 import classes from "./TaskInput.module.css";
 import { useState } from "react";
 
-function TaskInput({title, onBlur}) {
+function TaskInput({title, isDone, onBlur}) {
     const [inputValue, setInputValue] = useState(title);
 
     function handleChange(event) {
@@ -13,7 +13,7 @@ function TaskInput({title, onBlur}) {
     }
 
     return (
-        <input className={classes.taskInput} placeholder="Введите задачу..." value={inputValue} onChange={handleChange} onBlur={handleBlur} />
+        <input className={isDone ? `${classes.taskInput} ${classes.done}` : `${classes.taskInput} ${classes.undone}`} placeholder="Введите задачу..." value={inputValue} onChange={handleChange} onBlur={handleBlur} />
     );
 }
 

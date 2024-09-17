@@ -49,6 +49,21 @@ function TaskList() {
         setTaskList(updatedTaskList);
     }
 
+    function handleTaskExpand(taskToExpandId) {
+        let updatedTaskList = taskList.map((task) => {
+            if (taskToExpandId === task.id) {
+                if (task.isExpanded === true) {
+                    return {...task, isExpanded: false};
+                } else {
+                    return {...task, isExpanded: true};
+                }
+            } else {
+                return {...task, isExpanded: false};
+            }
+        });
+        setTaskList(updatedTaskList);
+    }
+
     let currentTaskList = taskList.map((task) => {
         return (
             <Task
@@ -60,6 +75,7 @@ function TaskList() {
                 onTaskDone={handleTaskDone}
                 onTaskDelete={handleTaskDelete}
                 onBlur={handleTaskChange}
+                onTaskExpand={handleTaskExpand}
             />
         );
     });
