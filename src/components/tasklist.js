@@ -27,6 +27,19 @@ function TaskList() {
         setTaskList(updatedTaskList);
     }
 
+    function handleTaskChange(updatedTaskId, updatedTaskTitle) {
+        console.log("HandleTaskChange");
+        let updatedTaskList = taskList.map((task) => {
+            if (updatedTaskId === task.id) {
+                return {...task, title: updatedTaskTitle};
+            } else {
+                return task;
+            }
+        });
+        console.log(updatedTaskList);
+        setTaskList(updatedTaskList);
+    }
+
     let currentTaskList = taskList.map((task) => {
         return (
             <Task
@@ -37,6 +50,7 @@ function TaskList() {
                 isExpanded={task.isExpanded}
                 onTaskDone={handleTaskDone}
                 onTaskDelete={handleTaskDelete}
+                onBlur={handleTaskChange}
             />
         );
     });
