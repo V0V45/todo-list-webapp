@@ -1,10 +1,10 @@
 import classes from "./Main.module.css";
 import TaskList from "../TaskList";
 
-function Main() {
+function Main({searchValue}) {
     return (
         <main className={classes.main}>
-            <TaskList />
+            <TaskList searchValue={searchValue} />
         </main>
     );
 }

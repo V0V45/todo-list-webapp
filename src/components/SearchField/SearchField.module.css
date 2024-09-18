@@ -1,0 +1,19 @@
+.searchField {
+    color: #0D0060;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #D7D7D7;
+    border: none;
+    font-family: "Asterik Sans Variable";
+    font-size: 32px;
+    padding: 8px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.searchField:focus {
+    outline: none;
+    box-shadow: 0 0 20px 0 #0D0060;
+}

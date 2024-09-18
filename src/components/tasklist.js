@@ -4,7 +4,7 @@ import { initTasks } from "../data/InitTasks";
 import { nanoid } from "nanoid";
 import AddField from "./AddField/AddField";
 
-function TaskList() {
+function TaskList({searchValue}) {
     const [taskList, setTaskList] = useState(JSON.parse(localStorage.getItem("taskList")) || initTasks);
 
     function handleTaskDone(updatedTaskId) {
@@ -82,7 +82,9 @@ function TaskList() {
         localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
     }
 
-    let currentTaskList = taskList.map((task) => {
+    let currentTaskList = taskList
+        .filter((task) => task.title.toLowerCase().includes(searchValue.toLowerCase()))
+        .map((task) => {
         return (
             <Task
                 key={nanoid()}
